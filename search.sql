@@ -1,0 +1,1 @@
+SELECT DISTINCT ip FROM scan_log WHERE date = SUBSTR(NOW(),1,10);
