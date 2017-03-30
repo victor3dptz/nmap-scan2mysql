@@ -10,8 +10,9 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 if [ $i -lt 20 ]
 then
 bash main2.sh $line &
-#echo $i
+#echo $line
 else
+bash main2.sh $line &
 i=0
 date
 wait
