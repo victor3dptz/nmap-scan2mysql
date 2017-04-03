@@ -25,6 +25,7 @@ if [ $i -lt 20 ]
 then
 bash fullsearch2.sh $line &
 else
+bash fullsearch2.sh $line &
 i=0
 date
 wait
