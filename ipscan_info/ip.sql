@@ -1,0 +1,3 @@
+SELECT scan_log.host_id, scan_log.date, scan_log.ip, (SELECT host.mac FROM host WHERE host.id LIKE scan_log.host_id) as mac, (SELECT host.macname FROM host WHERE host.id LIKE scan_log.host_id) as macname, (SELECT host.device FROM host WHERE host.id LIKE scan_log.host_id) as device, (SELECT host.os FROM host WHERE host.id LIKE scan_log.host_id) as os FROM scan_log WHERE scan_log.date LIKE SUBSTR(NOW(),1,10) AND scan_log.host_id NOT LIKE '0' ORDER BY scan_log.ip ASC;
+#SELECT *, (SELECT scan_log.ip FROM scan_log WHERE scan_log.host_id LIKE host.id) as ip FROM host;
+SELECT * FROM port WHERE date LIKE SUBSTR(NOW(),1,10) ORDER BY ip ASC;
